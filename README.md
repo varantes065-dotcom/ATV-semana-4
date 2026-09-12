@@ -12,3 +12,7 @@ Dessa forma, o sistema serve como uma base digital moderna e altamente customiz�
 Imagem do esboço (wireframe) criado para o projeto: ![alt text](public/esboço.png)
 
 Print da home-page criada para o projeto: ![alt text](public/image.png)
+
+Print projeto em tela de smartphone: ![alt text](public/img/Print.png)
+
+Print projeto em tela de Desktop: ![alt text](<public/img/Print Desktop.png>)
