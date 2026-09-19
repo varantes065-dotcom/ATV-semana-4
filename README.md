@@ -16,3 +16,7 @@ Print da home-page criada para o projeto: ![alt text](public/image.png)
 Print projeto em tela de smartphone: ![alt text](public/img/Print.png)
 
 Print projeto em tela de Desktop: ![alt text](<public/img/Print Desktop.png>)
+
+Print projeto em tela de Desktop: ![alt text](image-1.png)
+
+Print projeto em tela de Mobile: ![alt text](image.png)

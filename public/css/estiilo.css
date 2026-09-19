@@ -10,11 +10,10 @@ body {
     color: #333;
 }
 
+/* =========================
+   CABEÇALHO / NAVBAR
+========================= */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
     background-color: #fff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -22,19 +21,22 @@ header {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #0d1b2a;
+    color: #0d1b2a !important;
     text-decoration: none;
 }
 
 .nav-links {
-    display: flex;
     gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #555;
+    color: #555 !important;
     font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #0d1b2a !important;
 }
 
 .cart-icon {
@@ -43,24 +45,47 @@ header {
     font-weight: bold;
 }
 
+/* =========================
+   HERO / BANNER
+========================= */
 .hero {
-    text-align: center;
     padding: 60px 20px;
-    background-color: #0d1b2a;
-    color: #fff;
+    background-color: #0d1b2a !important;
+    color: #ffffff;
 }
 
 .hero h1 {
     font-size: 36px;
     margin-bottom: 10px;
+    color: #ffffff !important;
 }
 
-.hero p {
+.hero p,
+.hero .lead,
+.hero .text-secondary {
     font-size: 18px;
     margin-bottom: 20px;
-    color: #ccc;
+    color: #e0e6ed !important;
 }
 
+.hero-image {
+    width: 100%;
+    background: transparent !important;
+    padding: 0 !important;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    max-height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+/* =========================
+   BOTÃO PRINCIPAL
+========================= */
 .btn-primary {
     display: inline-block;
     padding: 12px 24px;
@@ -71,23 +96,53 @@ header {
     border: 1px solid #415a77;
 }
 
-.container {
+.btn-primary:hover {
+    background-color: #415a77;
+    color: #fff;
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+.section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* =========================
+   CATEGORIAS
+========================= */
+.categories-section {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-.section-title {
-    font-size: 24px;
-    margin-bottom: 20px;
+.category-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    height: 100%;
+    overflow: hidden;
 }
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+.category-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0d1b2a;
 }
 
+.category-card p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* =========================
+   PRODUTOS
+========================= */
 .product-card {
     background-color: #fff;
     border-radius: 12px;
@@ -155,42 +210,62 @@ header {
     cursor: pointer;
 }
 
+.btn-buy:hover {
+    background-color: #1b263b;
+    color: #fff;
+}
+
+/* =========================
+   SOBRE
+========================= */
+.about-section {
+    background-color: #fff;
+    margin-top: 60px;
+    padding: 60px 20px;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #0d1b2a;
+}
+
+.about-section p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-section img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
 footer {
-    text-align: center;
-    padding: 20px;
     background-color: #fff;
     margin-top: 40px;
+    padding: 40px 20px 20px;
     border-top: 1px solid #eee;
 }
 
-@media (max-width: 992px) {
-    .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+footer h3 {
+    color: #0d1b2a;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
+footer p {
+    color: #666;
+}
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+footer a {
+    color: #0d1b2a;
+    text-decoration: none;
+    margin-right: 15px;
+}
 
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .hero p {
-        font-size: 15px;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
+footer a:hover {
+    text-decoration: underline;
 }

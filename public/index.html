@@ -1,95 +1,525 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Básico</title>
+
+    <!-- Bootstrap 5 CSS CDN (Obrigatório) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS do projeto -->
     <link rel="stylesheet" href="./css/estiilo.css">
 </head>
+
 <body>
 
-    <header>
-        <a href="#" class="logo">Minha Loja</a>
-        <nav class="nav-links">
-            <a href="#">Início</a>
-            <a href="#">Produtos</a>
-            <a href="#">Categorias</a>
-            <a href="#">Contato</a>
+    <!-- CABEÇALHO -->
+    <header class="bg-white shadow-sm sticky-top">
+
+        <nav class="navbar navbar-expand-lg py-3">
+
+            <div class="container">
+
+                <a href="#" class="navbar-brand logo fw-bold text-dark fs-4">
+                    Minha Loja
+                </a>
+
+                <!-- Botão do menu no celular -->
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal"
+                    aria-controls="menuPrincipal"
+                    aria-expanded="false"
+                    aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+                <!-- Links (Mínimo de 4 links mantidos) -->
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+
+                    <div class="navbar-nav nav-links mx-auto">
+
+                        <a href="#" class="nav-link active">
+                            Início
+                        </a>
+
+                        <a href="#produtos" class="nav-link">
+                            Produtos
+                        </a>
+
+                        <a href="#categorias" class="nav-link">
+                            Categorias
+                        </a>
+
+                        <a href="#sobre" class="nav-link">
+                            Sobre
+                        </a>
+
+                        <a href="#contato" class="nav-link">
+                            Contato
+                        </a>
+
+                    </div>
+
+                    <a href="#" class="cart-icon btn btn-outline-dark fw-bold">
+                        🛒 Carrinho (0)
+                    </a>
+
+                </div>
+
+            </div>
+
         </nav>
-        <a href="#" class="cart-icon">🛒 Carrinho (0)</a>
+
     </header>
 
-    <section class="hero">
-        <h1>As Melhores Ofertas Estão Aqui</h1>
-        <p>Encontre produtos de alta qualidade com preços imperdíveis.</p>
-        <a href="#produtos" class="btn-primary">Ver Produtos</a>
-    </section>
 
-    <main class="container" id="produtos">
-        <h2 class="section-title">Produtos em Destaque</h2>
-        
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="./img/Calça Jeans Wide Leg  Sk8.jpg" alt="Calça Jeans Wide Leg / Sk8">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Calça Jeans Wide Leg / Sk8</h3>
-                    <p class="product-desc">Modelagem confortável e caimento moderno para o dia a dia.</p>
-                    <div class="product-footer">
-                        <span class="product-price">R$ 159,90</span>
-                        <button class="btn-buy">Comprar</button>
+    <!-- SEÇÃO PRINCIPAL -->
+    <main>
+
+        <!-- BANNER / HERO -->
+        <section class="hero bg-dark text-white py-5">
+
+            <div class="container">
+
+                <div class="row align-items-center g-4">
+
+                    <!-- Texto introdutório sobre o site -->
+                    <div class="col-12 col-md-6">
+
+                        <h1 class="display-5 fw-bold mb-3">
+                            As Melhores Ofertas Estão Aqui
+                        </h1>
+
+                        <p class="lead text-secondary mb-4">
+                            Encontre produtos de alta qualidade com preços
+                            imperdíveis para deixar seu estilo ainda melhor.
+                        </p>
+
+                        <a href="#produtos" class="btn btn-light btn-lg px-4 fw-semibold">
+                            Ver Produtos
+                        </a>
+
                     </div>
+
+                    <!-- Imagem principal -->
+                    <div class="col-12 col-md-6">
+
+                        <div class="hero-image">
+
+                            <img
+                                src="./img/Tênis Casual Estilo Skate.jpg"
+                                alt="Produtos da Minha Loja"
+                                class="img-fluid rounded-3 shadow">
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="./img/Moletom Canguru Minimalista.jpg" alt="Moletom Canguru Minimalista">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Moletom Canguru Minimalista</h3>
-                    <p class="product-desc">Confeccionado em algodão peluciado de alta qualidade com capuz forrado.</p>
-                    <div class="product-footer">
-                        <span class="product-price">R$ 189,90</span>
-                        <button class="btn-buy">Comprar</button>
+        </section>
+
+
+        <!-- SEÇÃO DE CATEGORIAS (Seção secundária de cards com imagem, título e descrição) -->
+        <section id="categorias" class="categories-section py-5 bg-light">
+
+            <div class="container">
+
+                <h2 class="section-title fw-bold mb-4 text-center">
+                    Nossas Categorias
+                </h2>
+
+                <div class="row g-4">
+
+                    <!-- BLOCO 1 -->
+                    <div class="col-12 col-md-4">
+
+                        <div class="category-card card h-100 border-0 shadow-sm">
+
+                            <img src="./img/Camiseta Básica Algodão Pima.webp" class="card-img-top object-fit-cover" alt="Roupas" style="height: 200px;">
+
+                            <div class="card-body">
+
+                                <h3 class="h5 fw-bold card-title">
+                                    Roupas
+                                </h3>
+
+                                <p class="card-text text-muted">
+                                    Camisetas, calças e moletons para
+                                    diferentes estilos.
+                                </p>
+
+                            </div>
+
+                        </div>
+
                     </div>
+
+                    <!-- BLOCO 2 -->
+                    <div class="col-12 col-md-4">
+
+                        <div class="category-card card h-100 border-0 shadow-sm">
+
+                            <img src="./img/Tênis Casual Estilo Skate.jpg" class="card-img-top object-fit-cover" alt="Calçados" style="height: 200px;">
+
+                            <div class="card-body">
+
+                                <h3 class="h5 fw-bold card-title">
+                                    Calçados
+                                </h3>
+
+                                <p class="card-text text-muted">
+                                    Tênis e outros calçados para completar
+                                    seu visual.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- BLOCO 3 -->
+                    <div class="col-12 col-md-4">
+
+                        <div class="category-card card h-100 border-0 shadow-sm">
+
+                            <img src="./img/Moletom Canguru Minimalista.jpg" class="card-img-top object-fit-cover" alt="Ofertas" style="height: 200px;">
+
+                            <div class="card-body">
+
+                                <h3 class="h5 fw-bold card-title">
+                                    Ofertas
+                                </h3>
+
+                                <p class="card-text text-muted">
+                                    Confira produtos selecionados com
+                                    preços especiais.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
             </div>
 
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="./img/Tênis Casual Estilo Skate.jpg" alt="Tênis Casual Estilo Skate">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Tênis Casual Estilo Skate</h3>
-                    <p class="product-desc">Durabilidade reforçada, sola antiderrapante e visual autêntico.</p>
-                    <div class="product-footer">
-                        <span class="product-price">R$ 249,90</span>
-                        <button class="btn-buy">Comprar</button>
+        </section>
+
+
+        <!-- PRODUTOS -->
+        <section class="container py-5" id="produtos">
+
+            <h2 class="section-title fw-bold mb-4 text-center">
+                Produtos em Destaque
+            </h2>
+
+            <!-- GRID DO BOOTSTRAP -->
+            <div class="row g-4">
+
+                <!-- PRODUTO 1 -->
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="product-card card h-100 border-0 shadow-sm">
+
+                        <div class="product-img">
+
+                            <img
+                                src="./img/Calça Jeans Wide Leg  Sk8.jpg"
+                                alt="Calça Jeans Wide Leg / Sk8"
+                                class="card-img-top object-fit-cover"
+                                style="height: 250px;">
+
+                        </div>
+
+                        <div class="product-info card-body d-flex flex-column">
+
+                            <h3 class="product-title h6 fw-bold">
+                                Calça Jeans Wide Leg / Sk8
+                            </h3>
+
+                            <p class="product-desc text-muted small mb-4">
+                                Modelagem confortável e caimento moderno
+                                para o dia a dia.
+                            </p>
+
+                            <div class="product-footer mt-auto d-flex justify-content-between align-items-center">
+
+                                <span class="product-price fw-bold text-dark fs-5">
+                                    R$ 159,90
+                                </span>
+
+                                <button class="btn-buy btn btn-dark btn-sm">
+                                    Comprar
+                                </button>
+
+                            </div>
+
+                        </div>
+
                     </div>
+
                 </div>
+
+
+                <!-- PRODUTO 2 -->
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="product-card card h-100 border-0 shadow-sm">
+
+                        <div class="product-img">
+
+                            <img
+                                src="./img/Moletom Canguru Minimalista.jpg"
+                                alt="Moletom Canguru Minimalista"
+                                class="card-img-top object-fit-cover"
+                                style="height: 250px;">
+
+                        </div>
+
+                        <div class="product-info card-body d-flex flex-column">
+
+                            <h3 class="product-title h6 fw-bold">
+                                Moletom Canguru Minimalista
+                            </h3>
+
+                            <p class="product-desc text-muted small mb-4">
+                                Confeccionado em algodão peluciado de alta
+                                qualidade com capuz forrado.
+                            </p>
+
+                            <div class="product-footer mt-auto d-flex justify-content-between align-items-center">
+
+                                <span class="product-price fw-bold text-dark fs-5">
+                                    R$ 189,90
+                                </span>
+
+                                <button class="btn-buy btn btn-dark btn-sm">
+                                    Comprar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUTO 3 -->
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="product-card card h-100 border-0 shadow-sm">
+
+                        <div class="product-img">
+
+                            <img
+                                src="./img/Tênis Casual Estilo Skate.jpg"
+                                alt="Tênis Casual Estilo Skate"
+                                class="card-img-top object-fit-cover"
+                                style="height: 250px;">
+
+                        </div>
+
+                        <div class="product-info card-body d-flex flex-column">
+
+                            <h3 class="product-title h6 fw-bold">
+                                Tênis Casual Estilo Skate
+                            </h3>
+
+                            <p class="product-desc text-muted small mb-4">
+                                Durabilidade reforçada, sola antiderrapante
+                                e visual autêntico.
+                            </p>
+
+                            <div class="product-footer mt-auto d-flex justify-content-between align-items-center">
+
+                                <span class="product-price fw-bold text-dark fs-5">
+                                    R$ 249,90
+                                </span>
+
+                                <button class="btn-buy btn btn-dark btn-sm">
+                                    Comprar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PRODUTO 4 -->
+                <div class="col-12 col-md-6 col-lg-3">
+
+                    <div class="product-card card h-100 border-0 shadow-sm">
+
+                        <div class="product-img">
+
+                            <img
+                                src="./img/Camiseta Básica Algodão Pima.webp"
+                                alt="Camiseta Básica Algodão Pima"
+                                class="card-img-top object-fit-cover"
+                                style="height: 250px;">
+
+                        </div>
+
+                        <div class="product-info card-body d-flex flex-column">
+
+                            <h3 class="product-title h6 fw-bold">
+                                Camiseta Básica Algodão Pima
+                            </h3>
+
+                            <p class="product-desc text-muted small mb-4">
+                                Toque macio, alta durabilidade e caimento
+                                impecável.
+                            </p>
+
+                            <div class="product-footer mt-auto d-flex justify-content-between align-items-center">
+
+                                <span class="product-price fw-bold text-dark fs-5">
+                                    R$ 79,90
+                                </span>
+
+                                <button class="btn-buy btn btn-dark btn-sm">
+                                    Comprar
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <div class="product-card">
-                <div class="product-img">
-                    <img src="./img/Camiseta Básica Algodão Pima.webp" alt="Camiseta Básica Algodão Pima">
-                </div>
-                <div class="product-info">
-                    <h3 class="product-title">Camiseta Básica Algodão Pima</h3>
-                    <p class="product-desc">Toque macio, alta durabilidade e caimento impecável.</p>
-                    <div class="product-footer">
-                        <span class="product-price">R$ 79,90</span>
-                        <button class="btn-buy">Comprar</button>
+        </section>
+
+
+        <!-- SOBRE -->
+        <section id="sobre" class="about-section py-5 bg-light">
+
+            <div class="container py-4">
+
+                <div class="row align-items-center g-4">
+
+                    <div class="col-12 col-md-6">
+
+                        <h2 class="fw-bold mb-3">
+                            Sobre a Minha Loja
+                        </h2>
+
+                        <p class="text-muted">
+                            A Minha Loja é um e-commerce desenvolvido para
+                            oferecer produtos de qualidade, combinando
+                            praticidade, variedade e preços acessíveis.
+                        </p>
+
+                        <p class="text-muted">
+                            Nosso objetivo é proporcionar uma experiência
+                            simples e agradável para quem deseja encontrar
+                            produtos para diferentes estilos.
+                        </p>
+
                     </div>
+
+                    <div class="col-12 col-md-6">
+
+                        <img
+                            src="./img/Moletom Canguru Minimalista.jpg"
+                            alt="Produtos da Minha Loja"
+                            class="img-fluid rounded-3 shadow-sm">
+
+                    </div>
+
                 </div>
+
             </div>
-        </div>
+
+        </section>
+
     </main>
 
-    <footer>
-        <p>&copy; 2026 MinhaLoja. Todos os direitos reservados.</p>
+
+    <!-- RODAPÉ -->
+    <footer id="contato" class="bg-white border-top py-5">
+
+        <div class="container">
+
+            <div class="row g-4 mb-4">
+
+                <div class="col-12 col-md-6">
+
+                    <h3 class="h5 fw-bold text-dark mb-3">
+                        Minha Loja
+                    </h3>
+
+                    <p class="text-muted mb-0">
+                        E-commerce básico desenvolvido para a atividade
+                        acadêmica.
+                    </p>
+
+                </div>
+
+                <div class="col-12 col-md-6">
+
+                    <h3 class="h5 fw-bold text-dark mb-3">
+                        Redes Sociais
+                    </h3>
+
+                    <div class="d-flex gap-3">
+
+                        <a href="#" class="text-decoration-none text-dark fw-semibold">
+                            Instagram
+                        </a>
+
+                        <a href="#" class="text-decoration-none text-dark fw-semibold">
+                            Facebook
+                        </a>
+
+                        <a href="#" class="text-decoration-none text-dark fw-semibold">
+                            LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="my-4 text-muted">
+
+            <p class="text-center text-muted mb-0 small">
+                &copy; 2026 MinhaLoja. Todos os direitos reservados.
+            </p>
+
+        </div>
+
     </footer>
 
+
+    <!-- Bootstrap JavaScript Bundle CDN -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
 </body>
+
 </html>
